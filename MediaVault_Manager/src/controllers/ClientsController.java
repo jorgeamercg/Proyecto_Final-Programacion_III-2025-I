@@ -1,5 +1,15 @@
 package controllers;
 
-public class ClientsController {
+import views.ClientsView;
 
+public class ClientsController {
+	private ClientsView view;
+	
+	public ClientsController() {
+		view = new ClientsView();
+	}
+	
+	public void clients() {
+		view.clients();
+	}
 }
