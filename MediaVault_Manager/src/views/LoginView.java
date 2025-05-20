@@ -9,11 +9,11 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import controllers.HomeController;
+import controllers.LoginController;
+
 import customClasses.Fuentes;
 import customClasses.RoundedButton;
 import customClasses.RoundedJPasswordField;
@@ -21,6 +21,12 @@ import customClasses.RoundedJTextField;
 import customClasses.RoundedPanel;
 
 public class LoginView {
+	
+	private JFrame frame;
+    private RoundedJTextField userField;
+    private RoundedJPasswordField passField;
+    private JLabel errorLabel;
+    private LoginController controller;
 	
 	Color blueBack = new Color(28, 148, 244);
 	Color blue = new Color(24, 130, 234);
@@ -33,19 +39,21 @@ public class LoginView {
 	ImageIcon logo = new ImageIcon(LoginView.class.getResource("/images/logo.png"));
 	
 	
-	public LoginView() {
+	public LoginView(LoginController controller) {
+		
+		this.controller = controller;
 
 	}
 	
 	public void login() {
 		
-		//VENTANA
-		JFrame frame  = new JFrame();
+		// VENTANA
+		frame  = new JFrame();
 		frame.setBounds(100, 20, 823, 643);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
-		//PANELES
+		// PANELES
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.white);
 		frame.getContentPane().add(panel);
@@ -75,13 +83,13 @@ public class LoginView {
 		intro.setBounds(37, 100, 236, 43);
 		roundPane.add(intro);
 		
-		//DATOS
+		// DATOS
 		JLabel userLabel = new JLabel("Usuario");
 		userLabel.setBounds(33, 154, 49, 14);
 		userLabel.setFont(txt);
 		roundPane.add(userLabel);
 		
-		RoundedJTextField userField = new RoundedJTextField(20);
+		userField = new RoundedJTextField(20);
 		userField.setBounds(35, 171, 240, 36);
 		userField.setBackground(grayF);
 		userField.setForeground(Color.BLACK);
@@ -94,7 +102,7 @@ public class LoginView {
 		passLabel.setFont(txt);
 		roundPane.add(passLabel);
 		
-		RoundedJPasswordField passField = new RoundedJPasswordField(20);
+		passField = new RoundedJPasswordField(20);
 		passField.setLocation(35, 237);
 		passField.setBackground(grayF);
 		passField.setForeground(Color.BLACK);
@@ -102,8 +110,8 @@ public class LoginView {
 		passField.setFont(txt);
 		roundPane.add(passField);
 		
-		//ERROR
-		JLabel errorLabel = new JLabel("Usuario o contraseña incorrectos");
+		// ERROR
+		errorLabel = new JLabel("Usuario o contraseña incorrectos");
 		errorLabel.setBounds(35, 275, 240, 14);
 		errorLabel.setForeground(Color.RED);
 		errorLabel.setFont(txt);
@@ -122,33 +130,12 @@ public class LoginView {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				
 				String password = new String(passField.getPassword());
- 				String username = userField.getText();
- 				
- 				if(username.equals("admin")&&password.equals("123")) {
- 					//JOptionPane.showMessageDialog(frame, "Bienvenido");
- 					
- 					frame.dispose();
- 					HomeController hc = new HomeController();
- 					hc.home();
- 					
- 					userField.setBorderColor(new Color(186, 186, 186));
- 		            passField.setBorderColor(new Color(186, 186, 186));
- 		            errorLabel.setVisible(false);
- 				}
- 				else {
- 					JOptionPane.showMessageDialog(frame, "Incorrecto");
- 					
- 					passField.setBorderColor(Color.red);
- 					userField.setBorderColor(Color.red);
- 					errorLabel.setVisible(true);
- 					
- 					passField.setText("");
- 					userField.setText("");
- 					userField.requestFocus();
- 				}
+                String username = userField.getText();
 
+                controller.login(username, password);
+				
 			}
 			
 		});
@@ -157,4 +144,26 @@ public class LoginView {
 		frame.revalidate();
 		frame.repaint();
 	}
+	
+	// GETTERS
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    public RoundedJTextField getUserField() {
+        return userField;
+    }
+
+    public RoundedJPasswordField getPassField() {
+        return passField;
+    }
+
+    public JLabel getErrorLabel() {
+        return errorLabel;
+    }
+
+    public void disposeWindow() {
+        frame.dispose();
+    }
+    
 }

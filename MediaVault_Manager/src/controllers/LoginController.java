@@ -1,15 +1,33 @@
 package controllers;
 
+import models.LoginModel;
+
 import views.LoginView;
 
 public class LoginController {
-	public LoginView vista;
 	
-	public LoginController() {
-		vista = new LoginView();
-	}
-	public void login() {
-		vista.login();
-	}
+	private LoginView view;
+	
+    private LoginModel model;
+
+    public LoginController() {
+    	
+        this.view = new LoginView(this);
+        
+        this.model = new LoginModel();
+        
+    }
+
+    public void login(String username, String password) {
+    	
+        model.processLogin(username, password, view);
+        
+    }
+
+    public void show() {
+    	
+        view.login();
+        
+    }
 
 }

@@ -12,7 +12,6 @@ import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
@@ -22,6 +21,7 @@ import controllers.LoginController;
 import controllers.OperationsController;
 import controllers.ProductsController;
 import controllers.Rentals_SalesController;
+
 import customClasses.RoundedPanel;
 import customClasses.SideBar;
 
@@ -46,14 +46,14 @@ public class HomeView {
 	
 	public void home() {
 		
-		//VENTANA
+		// VENTANA
 		JFrame frame = new JFrame();
 		frame.setBounds(100, 20, 823, 643);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
 		
-		//PANEL LATERAL
+		// PANEL LATERAL
 		RoundedPanel sidepanel = new RoundedPanel(10, blue);
 		sidepanel.setLocation(0, 0);
 		sidepanel.setSize(128, 606);
@@ -134,7 +134,7 @@ public class HomeView {
 		});
 		
 		
-		//PANEL CENTRO
+		// PANEL CENTRO
 		JPanel centro = new JPanel();
 		centro.setBounds(0, 0, 809, 606);
 		frame.getContentPane().add(centro);
@@ -167,7 +167,7 @@ public class HomeView {
 				
 				frame.dispose();
 				LoginController lc = new LoginController();
-				lc.login();
+				lc.show();
 			}
 		});
 		banner.add(logOutIcon);
