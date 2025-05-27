@@ -19,7 +19,7 @@ import controllers.ClientsController;
 import controllers.HomeController;
 import controllers.LoginController;
 import controllers.OperationsController;
-import controllers.ProductsController;
+import controllers.VideogamesController;
 import controllers.Rentals_SalesController;
 
 import customClasses.RoundedPanel;
@@ -34,7 +34,6 @@ public class HomeView {
 	ImageIcon homeIcon = new ImageIcon(HomeView.class.getResource("/images/home.png"));
 	ImageIcon usersIcon = new ImageIcon(HomeView.class.getResource("/images/users.png"));
 	ImageIcon gamesIcon = new ImageIcon(HomeView.class.getResource("/images/games.png"));
-	ImageIcon moviesIcon = new ImageIcon(HomeView.class.getResource("/images/movies.png"));
 	ImageIcon opIcon = new ImageIcon(HomeView.class.getResource("/images/op.png"));
 	ImageIcon rentIcon = new ImageIcon(HomeView.class.getResource("/images/rent.png"));
 	ImageIcon logOut = new ImageIcon(HomeView.class.getResource("/images/logOut.png"));
@@ -52,14 +51,12 @@ public class HomeView {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
-		
 		// PANEL LATERAL
 		RoundedPanel sidepanel = new RoundedPanel(10, blue);
 		sidepanel.setLocation(0, 0);
 		sidepanel.setSize(128, 606);
 		sidepanel.setLayout(new GridLayout(0, 1, 0, 0));
 		frame.getContentPane().add(sidepanel);
-		
 		
 		SideBar inicio = new SideBar("Inicio", homeIcon);
 		sidepanel.add(inicio);
@@ -115,24 +112,11 @@ public class HomeView {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				ProductsController pc = new ProductsController();
+				VideogamesController pc = new VideogamesController();
 				pc.games();
 			}
 			
 		});
-		
-		SideBar peliculas = new SideBar("Películas", moviesIcon);
-		sidepanel.add(peliculas);
-		peliculas.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				ProductsController pc = new ProductsController();
-				pc.movies();
-			}
-			
-		});
-		
 		
 		// PANEL CENTRO
 		JPanel centro = new JPanel();

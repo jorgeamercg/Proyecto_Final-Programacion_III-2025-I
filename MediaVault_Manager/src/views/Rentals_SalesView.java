@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
 import controllers.ClientsController;
 import controllers.HomeController;
 import controllers.OperationsController;
-import controllers.ProductsController;
+import controllers.VideogamesController;
 import controllers.Rentals_SalesController;
 import customClasses.Fuentes;
 import customClasses.RoundedPanel;
@@ -32,7 +32,6 @@ public class Rentals_SalesView {
 	ImageIcon homeIcon = new ImageIcon(HomeView.class.getResource("/images/home.png"));
 	ImageIcon usersIcon = new ImageIcon(HomeView.class.getResource("/images/users.png"));
 	ImageIcon gamesIcon = new ImageIcon(HomeView.class.getResource("/images/games.png"));
-	ImageIcon moviesIcon = new ImageIcon(HomeView.class.getResource("/images/movies.png"));
 	ImageIcon opIcon = new ImageIcon(HomeView.class.getResource("/images/op.png"));
 	ImageIcon rentIcon = new ImageIcon(HomeView.class.getResource("/images/rent.png"));
 	ImageIcon logOut = new ImageIcon(HomeView.class.getResource("/images/logOut.png"));
@@ -111,24 +110,11 @@ public class Rentals_SalesView {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				ProductsController pc = new ProductsController();
+				VideogamesController pc = new VideogamesController();
 				pc.games();
 			}
 
 		});
-
-		SideBar peliculas = new SideBar("Películas", moviesIcon);
-		sidepanel.add(peliculas);
-		peliculas.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				ProductsController pc = new ProductsController();
-				pc.movies();
-			}
-
-		});
-
 
 		//PANEL CENTRO
 		JPanel centro = new JPanel();

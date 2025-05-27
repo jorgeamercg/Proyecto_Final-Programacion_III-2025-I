@@ -16,7 +16,7 @@ public class AdminDAO {
 
 	    try {
 	    	// PreparedStatement PARA EVITAR SQL INJECTION
-	        String sql = "SELECT password FROM Admins WHERE username = ?";
+	        String sql = "SELECT password FROM admins WHERE username = ?";
 	        PreparedStatement statement = connection.prepareStatement(sql);
 	        statement.setString(1, username);
 
@@ -36,7 +36,7 @@ public class AdminDAO {
 	                String hashed = org.mindrot.jbcrypt.BCrypt.hashpw(password, org.mindrot.jbcrypt.BCrypt.gensalt());
 
 	                PreparedStatement update = connection.prepareStatement(
-	                    "UPDATE Admins SET password = ? WHERE username = ?"
+	                    "UPDATE admins SET password = ? WHERE username = ?"
 	                );
 	                update.setString(1, hashed);
 	                update.setString(2, username);
