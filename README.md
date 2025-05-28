@@ -34,7 +34,7 @@ El proyecto consiste en la creación de una aplicación o sistema de aspecto adm
 
 ## **Enlace al Diseño del Sistema en Figma**
 
-* https://www.figma.com/design/3PEkIHDUbOMhvKQtKb3XI2/MediaVault-Manager--Edici%C3%B3n-?m=auto&t=a1LyGdxeG3fwWwqc-1
+* https://www.figma.com/design/3PEkIHDUbOMhvKQtKb3XI2/PixelBox?m=auto&t=5SkcbqTX6HTyrUwj-6
 
 ## **Credenciales de Acceso al Sistema**
 
