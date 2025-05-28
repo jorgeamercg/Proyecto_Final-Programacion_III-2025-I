@@ -28,9 +28,8 @@ public class LoginView {
     private JLabel errorLabel;
     private LoginController controller;
 	
-	Color blueBack = new Color(28, 148, 244);
-	Color blue = new Color(24, 130, 234);
-	Color grayF = new Color(250, 250, 250);
+	Color orangeBase = Color.decode("#FF8F00");
+	Color grayField = Color.decode("#E8E8E8");
 	
 	Fuentes tipoFuentes = new Fuentes();
 	Font txt = tipoFuentes.fuente("/fonts/GolosText-Regular.ttf", Font.PLAIN, 12f);
@@ -49,31 +48,32 @@ public class LoginView {
 		
 		// VENTANA
 		frame  = new JFrame();
-		frame.setBounds(100, 20, 823, 643);
+		frame.setBounds(100, 20, 1000, 643);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
 		// PANELES
 		JPanel panel = new JPanel();
-		panel.setBackground(Color.white);
+		panel.setBackground(Color.decode("#DBDBDB"));
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		RoundedPanel roundPane = new RoundedPanel(30, Color.white, 3);
-		roundPane.setLocation(256, 125);
+		RoundedPanel roundPane = new RoundedPanel(30, Color.decode("#DBDBDB"), 3);
+		roundPane.setLocation(340, 125);
 		roundPane.setSize(310,365);
 		panel.add(roundPane);
 		
 		JPanel back = new JPanel();
-		back.setBackground(blueBack);
-		back.setBounds(0, 0, 809, 240);
+		back.setBackground(orangeBase);
+		back.setBounds(0, 0, 986, 240);
 		panel.add(back);
 		roundPane.setLayout(null);
 		
 		//
 		JLabel logoLabel = new JLabel("");
 		logoLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		logoLabel.setIcon(new ImageIcon(logo.getImage().getScaledInstance(200,150, Image.SCALE_SMOOTH)));
+		logoLabel.setIcon(new ImageIcon(logo.getImage().getScaledInstance(200,100, Image.SCALE_SMOOTH)));
 		logoLabel.setBounds(35, 11, 240, 96);
 		roundPane.add(logoLabel);
 		
@@ -91,7 +91,7 @@ public class LoginView {
 		
 		userField = new RoundedJTextField(20);
 		userField.setBounds(35, 171, 240, 36);
-		userField.setBackground(grayF);
+		userField.setBackground(grayField);
 		userField.setForeground(Color.BLACK);
 		userField.setFont(txt);
 		roundPane.add(userField);
@@ -104,7 +104,7 @@ public class LoginView {
 		
 		passField = new RoundedJPasswordField(20);
 		passField.setLocation(35, 237);
-		passField.setBackground(grayF);
+		passField.setBackground(grayField);
 		passField.setForeground(Color.BLACK);
 		passField.setSize(240,36);
 		passField.setFont(txt);
@@ -122,7 +122,7 @@ public class LoginView {
 		RoundedButton btn = new RoundedButton("Iniciar sesión");
 		btn.setFont(btntxt);
 		btn.setRadius(20);
-		btn.setBackground(blue);
+		btn.setBackground(orangeBase);
 		btn.setForeground(new Color(255, 255, 255));
 		btn.setLocation(35, 300);
 		btn.setSize(240, 40);
@@ -147,23 +147,33 @@ public class LoginView {
 	
 	// GETTERS
     public JFrame getFrame() {
+    	
         return frame;
+        
     }
 
     public RoundedJTextField getUserField() {
+    	
         return userField;
+        
     }
 
     public RoundedJPasswordField getPassField() {
+    	
         return passField;
+        
     }
 
     public JLabel getErrorLabel() {
+    	
         return errorLabel;
+        
     }
 
     public void disposeWindow() {
+    	
         frame.dispose();
+        
     }
     
 }

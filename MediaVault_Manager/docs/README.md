@@ -1,4 +1,4 @@
-# **Proyecto: MediaVault Manager (sistema de renta y venta de películas y videojuegos)**
+# **Proyecto: PixelBox (sistema administrativo de renta y venta de videojuegos)**
 
 El proyecto consiste en la creación de una aplicación o sistema de aspecto administrativo para un plan de negocios de renta y venta de videojuegos, estilo Blockbuster. Se enfoca en llevar el control de clientes, operaciones, así como del registro de los productos.
 
@@ -7,7 +7,7 @@ El proyecto consiste en la creación de una aplicación o sistema de aspecto adm
 * Gestión de clientes (crear, consultar, historial de rentas/compras, descuentos)  
 * Registro de operaciones (renta y compra de videojuegos)  
 * Cálculo automático de fechas de devolución y aplicación de promociones  
-* Consulta de inventario de videojuegos y películas  
+* Consulta de inventario de videojuegos  
 * Generación de reportes y tickets en PDF  
 * Funciones de acceso del Administrador (Login, Registro, Logout)
 
@@ -35,6 +35,13 @@ El proyecto consiste en la creación de una aplicación o sistema de aspecto adm
 ## **Enlace al Diseño del Sistema en Figma**
 
 * https://www.figma.com/design/3PEkIHDUbOMhvKQtKb3XI2/MediaVault-Manager--Edici%C3%B3n-?m=auto&t=a1LyGdxeG3fwWwqc-1
+
+## **Credenciales de Acceso al Sistema**
+
+* Admins:
+* username: jmercado_23, password: wasd123
+* username: mpedro_24, password: qwerty123
+* username: bjuan_25, password: zxcv123
 
 ## **Integrantes**
  

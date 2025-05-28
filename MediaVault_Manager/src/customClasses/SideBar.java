@@ -21,7 +21,7 @@ public class SideBar extends JButton {
 		setHorizontalTextPosition(SwingConstants.CENTER);
 		setVerticalTextPosition(SwingConstants.BOTTOM);
 		setAlignmentX(Component.CENTER_ALIGNMENT);
-		setBackground(new Color(24, 130, 234));
+		setBackground(Color.decode("#FF8F00"));
 		setForeground(Color.white);
 		setBorder(null);	
     }

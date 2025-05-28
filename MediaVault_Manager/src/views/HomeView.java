@@ -28,7 +28,8 @@ import customClasses.SideBar;
 
 public class HomeView {
 	
-	Color blue = new Color(24, 130, 234);
+	Color orangeBase = Color.decode("#FF8F00");
+	Color grayField = Color.decode("#E8E8E8");
 	
 	ImageIcon logo = new ImageIcon(HomeView.class.getResource("/images/logo.png"));
 	ImageIcon homeIcon = new ImageIcon(HomeView.class.getResource("/images/home.png"));
@@ -47,12 +48,13 @@ public class HomeView {
 		
 		// VENTANA
 		JFrame frame = new JFrame();
-		frame.setBounds(100, 20, 823, 643);
+		frame.setBounds(100, 20, 1000, 643);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
 		// PANEL LATERAL
-		RoundedPanel sidepanel = new RoundedPanel(10, blue);
+		RoundedPanel sidepanel = new RoundedPanel(10, orangeBase);
 		sidepanel.setLocation(0, 0);
 		sidepanel.setSize(128, 606);
 		sidepanel.setLayout(new GridLayout(0, 1, 0, 0));
@@ -124,15 +126,15 @@ public class HomeView {
 		frame.getContentPane().add(centro);
 		centro.setLayout(null);
 		
-		RoundedPanel banner = new RoundedPanel(10, Color.white);
-		banner.setLocation(140, 0);
+		RoundedPanel banner = new RoundedPanel(10, grayField);
+		banner.setLocation(230, 0);
 		banner.setSize(654,75);
 		centro.add(banner);
 		banner.setLayout(null);
 		
 		JLabel logoLabel = new JLabel("");
 		logoLabel.setBounds(233, 5, 188, 64);
-		logoLabel.setIcon(new ImageIcon(((ImageIcon) logo).getImage().getScaledInstance(200, 130, Image.SCALE_SMOOTH)));
+		logoLabel.setIcon(new ImageIcon(((ImageIcon) logo).getImage().getScaledInstance(150, 80, Image.SCALE_SMOOTH)));
 		banner.add(logoLabel);
 		
 		

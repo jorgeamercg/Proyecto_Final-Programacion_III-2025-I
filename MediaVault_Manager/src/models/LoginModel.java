@@ -28,7 +28,6 @@ public class LoginModel {
             view.getErrorLabel().setVisible(true);
 
             view.getPassField().setText("");
-            view.getUserField().setText("");
             view.getUserField().requestFocus();
         }
         

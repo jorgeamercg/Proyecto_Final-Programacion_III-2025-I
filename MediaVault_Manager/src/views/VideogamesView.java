@@ -26,7 +26,7 @@ public class VideogamesView {
 	
 	private JFrame frame = new JFrame();
 	
-	Color blue = new Color(24, 130, 234);
+	Color orangeBase = Color.decode("#FF8F00");
 	
 	Fuentes tipoFuentes = new Fuentes();
 	Font titles = tipoFuentes.fuente("/fonts/GolosText-Regular.ttf", Font.BOLD, 16f);
@@ -46,12 +46,13 @@ public class VideogamesView {
 	public void games() {
 		//VENTANA
 		JFrame frame  = new JFrame();
-		frame.setBounds(100, 20, 823, 643);
+		frame.setBounds(100, 20, 1000, 643);
+		frame.setLocationRelativeTo(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 
 		//PANEL LATERAL
-		RoundedPanel sidepanel = new RoundedPanel(10, blue);
+		RoundedPanel sidepanel = new RoundedPanel(10, orangeBase);
 		sidepanel.setLocation(0, 0);
 		sidepanel.setSize(128, 606);
 		sidepanel.setLayout(new GridLayout(0, 1, 0, 0));
